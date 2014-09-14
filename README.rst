@@ -49,7 +49,7 @@ explicitly listed in ``settings.SETTINGS_EXPORT``:
 
     SETTINGS_EXPORT = [
         'DEBUG',
-        'GA-ID',
+        'GA_ID',
     ]
 
 
