@@ -21,14 +21,14 @@ Installation
     $ pip install django-settings-export
 
 
-Add ``'django_settings_export.export_settings'`` to
+Add ``'django_settings_export.settings_export'`` to
 ``TEMPLATE_CONTEXT_PROCESSORS`` in your ``settings.py``:
 
 .. code-block:: python
 
     TEMPLATE_CONTEXT_PROCESSORS = [
         # [...]
-        'django_settings_export.export_settings',
+        'django_settings_export.settings_export',
     ]
 
 
