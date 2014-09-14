@@ -73,6 +73,8 @@ Exceptions:
   results in an ``UnexportedSettingError``.
 
 
+See also the bundled `demo app<demo>`_.
+
 Development
 ===========
 
