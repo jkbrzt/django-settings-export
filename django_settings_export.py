@@ -1,3 +1,9 @@
+"""
+Export Django settings to templates
+
+https://github.com/jakubroztocil/django-settings-export
+
+"""
 from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
 
