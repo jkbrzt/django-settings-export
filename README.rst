@@ -97,7 +97,7 @@ Contact
 =======
 
 
-Jakub Roztočil
+Jakub Roztocil
 
 * https://github.com/jakubroztocil
 * https://twitter.com/jakubroztocil

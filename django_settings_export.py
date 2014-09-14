@@ -8,6 +8,9 @@ from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
 
 
+__version__ = '1.0.3'
+
+
 class SettingsExportError(ImproperlyConfigured):
     """Base error indicating misconfiguration."""
 
