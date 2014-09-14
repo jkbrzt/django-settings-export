@@ -21,8 +21,16 @@ Installation
     $ pip install django-settings-export
 
 
-Add ``django_settings_export.export_settings``
-to ``TEMPLATE_CONTEXT_PROCESSORS`` in your ``settings.py``.
+Add ``'django_settings_export.export_settings'`` to
+``TEMPLATE_CONTEXT_PROCESSORS`` in your ``settings.py``:
+
+.. code-block:: python
+
+    TEMPLATE_CONTEXT_PROCESSORS = [
+        # [...]
+        'django_settings_export.export_settings',
+    ]
+
 
 
 Usage
@@ -34,9 +42,7 @@ explicitly listed in ``settings.SETTINGS_EXPORT``:
 
 .. code-block:: python
 
-    # [settings.py]
-
-    # ...
+    # settings.py
 
     DEBUG = True
     GA_ID = 'UA-00000-0'
