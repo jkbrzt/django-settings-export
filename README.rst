@@ -85,6 +85,11 @@ Run tests:
     $ python manage.py test
 
 
+Licence
+=======
+
+BSD. See `LICENCE <LICENCE>`_ for more details.
+
 
 Contact
 =======
