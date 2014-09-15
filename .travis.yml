@@ -12,9 +12,9 @@ env:
   - DJANGO=Django==1.7
   - DJANGO=Django
 script:
-  - pip install $DJANGO
+  - pip install $DJANGO coverage
   - pip install .
-  - python ./demo/manage.py test --verbosity=3
+  - coverage run ./demo/manage.py test --verbosity=3
 after_success:
   - pip install python-coveralls
   - coveralls
