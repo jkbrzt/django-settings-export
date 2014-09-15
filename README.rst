@@ -20,6 +20,7 @@ for doing just that.
 
 Tested on Python 2.7+, Django 1.5+.
 
+
 Installation
 ============
 
