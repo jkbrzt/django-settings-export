@@ -1,6 +1,10 @@
 ``django-settings-export``
 ##########################
 
+
+|travis| |version|
+
+
 Often it is needed to make some of your Django project's settings
 accessible from within templates. This app provides a simple mechanism
 for doing just that.
@@ -78,13 +82,18 @@ See also the bundled `demo app <demo>`_.
 Development
 ===========
 
-
-Run tests:
-
 .. code-block:: bash
 
     $ cd demo
+
+    # Run demo
+    $ python manage.py runserver
+
+    # Run tests on current Python
     $ python manage.py test
+
+    # Run tests on all Pythons
+    $ tox
 
 
 Licence
@@ -102,3 +111,11 @@ Jakub Roztocil
 * https://github.com/jakubroztocil
 * https://twitter.com/jakubroztocil
 
+
+.. |travis| image:: https://api.travis-ci.org/jakubroztocil/django-settings-export.svg
+    :target: http://travis-ci.org/jakubroztocil/django-settings-export
+    :alt: Build Status of the master branch on Mac/Linux
+
+
+.. |version| image:: https://badge.fury.io/py/django-settings-export.svg
+    :target: https://pypi.python.org/pypi/django-settings-export

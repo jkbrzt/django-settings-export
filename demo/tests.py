@@ -9,7 +9,7 @@ from django_settings_export import (
 
 class TestExportedSettings(SimpleTestCase):
 
-    def test_exported_settings(self):
+    def test_exported_settings_wrapper(self):
         settings = ExportedSettings({'FOO': 'BAR'})
         self.assertEqual(settings.FOO, 'BAR')
         with self.assertRaises(UnexportedSettingError):
@@ -19,17 +19,17 @@ class TestExportedSettings(SimpleTestCase):
 
 class TestSettingsExportContextProcessor(SimpleTestCase):
 
-    def test_settings_export_ok(self):
+    def test_export_ok(self):
         r = self.client.get('/')
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, 'settings.FOO: foo')
         self.assertContains(r, 'settings.BAR: bar')
 
-    def test_settings_export_access_unexported_setting(self):
+    def test_unexported_setting(self):
         with self.assertRaises(UnexportedSettingError):
             self.client.get('/error')
 
-    def test_settings_export_undefined_setting(self):
+    def test_undefined_setting(self):
         with self.assertRaises(UndefinedSettingError):
             with self.settings(SETTINGS_EXPORT=['UNDEFINED_SETTING']):
                 self.client.get('/')
