@@ -82,7 +82,8 @@ Exceptions:
   results in an ``UnexportedSettingError``.
 
 
-See also the bundled `demo app <demo>`_.
+See also the bundled
+`demo app <https://github.com/jakubroztocil/django-settings-export/tree/master/demo>`_.
 
 Development
 ===========
@@ -104,7 +105,7 @@ Development
 Licence
 =======
 
-BSD. See `LICENCE <LICENCE>`_ for more details.
+BSD. See `LICENCE <https://github.com/jakubroztocil/django-settings-export/tree/master/LICENCE>`_ for more details.
 
 
 Contact
