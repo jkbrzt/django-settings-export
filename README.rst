@@ -9,11 +9,13 @@ Often it is needed to make some of your Django project's settings
 accessible from within templates. This app provides a simple mechanism
 for doing just that.
 
-It tries to make settings management easier by:
 
-* Requiring you to be explicit about what
-  settings should be exported to templates.
-* Failing loudly if an undefined or unexported setting is accessed.
+**Principles:**
+
+* *Explicit is better than implicit:* Only explicitly listed
+  settings keys are exported to templates.
+* *Errors should never pass silently:* Accessing an undefined
+  or unexported setting key from templates results in an exception.
 
 
 Installation
