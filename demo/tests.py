@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
 
 from django_settings_export import (
     UndefinedSettingError,
@@ -7,7 +7,7 @@ from django_settings_export import (
 )
 
 
-class TestExportedSettings(SimpleTestCase):
+class TestExportedSettings(TestCase):
 
     def test_exported_settings_wrapper(self):
         settings = ExportedSettings({'FOO': 'BAR'})
@@ -17,7 +17,7 @@ class TestExportedSettings(SimpleTestCase):
             settings.XXX
 
 
-class TestSettingsExportContextProcessor(SimpleTestCase):
+class TestSettingsExportContextProcessor(TestCase):
 
     def test_export_ok(self):
         r = self.client.get('/')

@@ -14,7 +14,7 @@ env:
 script:
   - pip install $DJANGO coverage
   - pip install .
-  - coverage run --source=. --omit=setup.py ./demo/manage.py test --verbosity=3
+  - coverage run --source=. --omit=setup.py ./demo/manage.py test --verbosity=2
 after_success:
   - pip install python-coveralls
   - coveralls
