@@ -15,8 +15,10 @@ for doing just that.
 * *Explicit is better than implicit:* Only explicitly listed
   settings keys are exported to templates.
 * *Errors should never pass silently:* Accessing an undefined
-  or unexported setting key from templates results in an exception.
+  or unexported setting key from a template results in an exception.
 
+
+Tested on Python 2.7+, Django 1.5+.
 
 Installation
 ============
