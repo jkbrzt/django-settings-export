@@ -74,7 +74,7 @@ via ``settings.<KEY>``:
     {% endif %}
 
 
-Exceptions:
+**Exceptions:**
 
 * Listing an undefined setting key in ``SETTINGS_EXPORT`` results in an
   ``UndefinedSettingError``.
