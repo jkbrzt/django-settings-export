@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name="django-settings-export",
-    version='1.0.4',
+    version='1.0.5',
     author="Jakub Roztocil",
     author_email="jakub@roztocil.co",
     description='This Django app allows you to export'
