@@ -100,7 +100,7 @@ via ``settings.<KEY>``:
 
 
 See also the bundled
-`demo app <https://github.com/jakubroztocil/django-settings-export/tree/master/demo>`_.
+`demo app <https://github.com/jkbrzt/django-settings-export/tree/master/demo>`_.
 
 Development
 ===========
@@ -122,7 +122,7 @@ Development
 Licence
 =======
 
-BSD. See `LICENCE <https://github.com/jakubroztocil/django-settings-export/tree/master/LICENCE>`_ for more details.
+BSD. See `LICENCE <https://github.com/jkbrzt/django-settings-export/tree/master/LICENCE>`_ for more details.
 
 
 Contact
@@ -131,12 +131,12 @@ Contact
 
 Jakub Roztocil
 
-* https://github.com/jakubroztocil
-* https://twitter.com/jakubroztocil
+* https://github.com/jkbrzt
+* https://twitter.com/jkbrzt
 
 
-.. |travis| image:: https://api.travis-ci.org/jakubroztocil/django-settings-export.svg
-    :target: http://travis-ci.org/jakubroztocil/django-settings-export
+.. |travis| image:: https://api.travis-ci.org/jkbrzt/django-settings-export.svg
+    :target: http://travis-ci.org/jkbrzt/django-settings-export
     :alt: Build Status of the master branch
 
 
@@ -144,6 +144,6 @@ Jakub Roztocil
     :target: https://pypi.python.org/pypi/django-settings-export
     :alt: PyPi
 
-.. |coverage| image:: https://img.shields.io/coveralls/jakubroztocil/django-settings-export.svg?branch=master
-    :target: https://coveralls.io/r/jakubroztocil/django-settings-export?branch=master
+.. |coverage| image:: https://img.shields.io/coveralls/jkbrzt/django-settings-export.svg?branch=master
+    :target: https://coveralls.io/r/jkbrzt/django-settings-export?branch=master
     :alt: Coverage

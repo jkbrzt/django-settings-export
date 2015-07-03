@@ -1,4 +1,4 @@
-# https://travis-ci.org/jakubroztocil/django-settings-export
+# https://travis-ci.org/jkbrzt/django-settings-export
 language: python
 python:
   - 2.7
