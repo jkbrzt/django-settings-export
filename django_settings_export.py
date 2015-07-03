@@ -8,7 +8,7 @@ from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
 
 
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 
 class SettingsExportError(ImproperlyConfigured):
