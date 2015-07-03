@@ -24,14 +24,31 @@ Tested on Python 2.7+, Django 1.5+.
 Installation
 ============
 
-
 .. code-block:: bash
 
     $ pip install django-settings-export
 
 
 Add ``'django_settings_export.settings_export'`` to
-``TEMPLATE_CONTEXT_PROCESSORS`` in your ``settings.py``:
+template context processor list in your ``settings.py``:
+
+**Django 1.8 and newer:**
+
+.. code-block:: python
+
+    TEMPLATES = [
+        {
+            # …
+            'OPTIONS': {
+                'context_processors': [
+                    # …
+                    'django_settings_export.settings_export',
+                ],
+            },
+        },
+    ]
+
+**Django older than 1.8:**
 
 .. code-block:: python
 
