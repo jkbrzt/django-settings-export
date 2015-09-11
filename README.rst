@@ -147,3 +147,4 @@ Jakub Roztocil
 .. |coverage| image:: https://img.shields.io/coveralls/jkbrzt/django-settings-export.svg?branch=master
     :target: https://coveralls.io/r/jkbrzt/django-settings-export?branch=master
     :alt: Coverage
+    
