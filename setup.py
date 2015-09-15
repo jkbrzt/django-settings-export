@@ -6,12 +6,14 @@ try:
 except ImportError:
     pass
 
+
 with codecs.open('README.rst', encoding='utf-8') as readme:
-     long_description = readme.read()
+    long_description = readme.read()
+
 
 setup(
     name="django-settings-export",
-    version='1.0.5',
+    version='1.0.6',
     author="Jakub Roztocil",
     author_email="jakub@roztocil.co",
     description='This Django app allows you to export'
