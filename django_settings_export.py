@@ -26,12 +26,12 @@ class UnexportedSettingError(SettingsExportError):
 def settings_export(request):
     """
     The template context processor that adds settings defined in
-    `settings.SETTINGS_EXPORT` (or whatever SETTINGS_EXPORT_NAME is set to)
-    to the context.
+    `SETTINGS_EXPORT` to the context. If SETTINGS_EXPORT_VARIABLE_NAME is not
+    set, the context variable will be `settings`.
     """
-    settings_name = getattr(django_settings, 'SETTINGS_EXPORT_NAME', 'settings')
+    variable_name = getattr(django_settings, 'SETTINGS_EXPORT_VARIABLE_NAME', 'settings')
     return {
-        settings_name: _get_exported_settings()
+        variable_name: _get_exported_settings()
     }
 
 
