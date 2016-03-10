@@ -98,14 +98,14 @@ via ``settings.<KEY>``:
 * Accessing a unexported setting key on the ``settings`` object in a template
   results in an ``UnexportedSettingError``.
 
-
-See also the bundled
-`demo app <https://github.com/jkbrzt/django-settings-export/tree/master/demo>`_.
-
 If you wish to change the name of the context variable to something besides
 ``settings``, add ``SETTINGS_EXPORT_VARIABLE_NAME = 'settings_name'`` to your settings.py.
 This is useful when some other plugin is already adding ``settings`` to your
 template contexts.
+
+See also the bundled
+`demo app <https://github.com/jkbrzt/django-settings-export/tree/master/demo>`_.
+
 
 Development
 ===========
@@ -122,6 +122,12 @@ Development
 
     # Run tests on all Pythons
     $ tox
+
+==========
+Change Log
+==========
+
+See `CHANGELOG <https://github.com/jkbrzt/django-settings-export/blob/master/CHANGELOG.rst>`_.
 
 
 Licence
@@ -152,4 +158,3 @@ Jakub Roztocil
 .. |coverage| image:: https://img.shields.io/coveralls/jkbrzt/django-settings-export.svg?branch=master
     :target: https://coveralls.io/r/jkbrzt/django-settings-export?branch=master
     :alt: Coverage
-    
