@@ -8,7 +8,7 @@ from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
 
 
-__version__ = '1.0.5'
+__version__ = '1.1.0'
 
 
 class SettingsExportError(ImproperlyConfigured):
@@ -25,12 +25,13 @@ class UnexportedSettingError(SettingsExportError):
 
 def settings_export(request):
     """
-    The template context processor that adds settings defined
-    in `settings.SETTINGS_EXPORT` to the context.
-
+    The template context processor that adds settings defined in
+    `SETTINGS_EXPORT` to the context. If SETTINGS_EXPORT_VARIABLE_NAME is not
+    set, the context variable will be `settings`.
     """
+    variable_name = getattr(django_settings, 'SETTINGS_EXPORT_VARIABLE_NAME', 'settings')
     return {
-        'settings': _get_exported_settings()
+        variable_name: _get_exported_settings()
     }
 
 

@@ -25,6 +25,13 @@ class TestSettingsExportContextProcessor(TestCase):
         self.assertContains(r, 'settings.FOO: foo')
         self.assertContains(r, 'settings.BAR: bar')
 
+    def test_export_ok_with_renamed_variable(self):
+        with self.settings(SETTINGS_EXPORT_VARIABLE_NAME='django_settings'):
+            r = self.client.get('/rename')
+            self.assertEqual(r.status_code, 200)
+            self.assertContains(r, 'django_settings.FOO: foo')
+            self.assertContains(r, 'django_settings.BAR: bar')
+
     def test_unexported_setting(self):
         with self.assertRaises(UnexportedSettingError):
             self.client.get('/error')
