@@ -7,7 +7,7 @@ This document records all notable changes to
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 
-1.1.0 (2016-03-20)
+1.1.0 (2016-03-10)
 ------------------
 
 * Added ability to set the name of the context variable to something besides
