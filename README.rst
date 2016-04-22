@@ -86,24 +86,52 @@ via ``settings.<KEY>``:
 
 .. code-block:: html
 
+    <!-- template.html -->
+
     {% if not settings.DEBUG %}
         <script>ga('create', '{{ settings.GA_ID }}', 'auto');</script>
     {% endif %}
 
 
-**Exceptions:**
+Changing the variable name
+--------------------------
+
+If you wish to change the name of the context variable to something besides
+``settings``, add ``SETTINGS_EXPORT_VARIABLE_NAME = 'custom_name'``
+to your ``settings.py``. This is useful when some other plugin is already adding
+``settings`` to your template contexts.
+
+
+.. code-block:: python
+
+    # settings.py
+    FOO = 'bar'
+    SETTINGS_EXPORT = ['FOO']
+    SETTINGS_EXPORT_VARIABLE_NAME = 'my_config'
+
+
+
+.. code-block:: html
+
+    <!-- template.html -->
+
+    {{ my_config.FOO }}
+
+
+Exceptions
+----------
 
 * Listing an undefined setting key in ``SETTINGS_EXPORT`` results in an
   ``UndefinedSettingError``.
 * Accessing a unexported setting key on the ``settings`` object in a template
   results in an ``UnexportedSettingError``.
 
-If you wish to change the name of the context variable to something besides
-``settings``, add ``SETTINGS_EXPORT_VARIABLE_NAME = 'settings_name'`` to your settings.py.
-This is useful when some other plugin is already adding ``settings`` to your
-template contexts.
 
-See also the bundled
+
+Demo
+----
+
+See the source code of the bundled
 `demo app <https://github.com/jkbrzt/django-settings-export/tree/master/demo>`_.
 
 
@@ -123,7 +151,7 @@ Development
     # Run tests on all Pythons
     $ tox
 
-==========
+
 Change Log
 ==========
 
@@ -142,6 +170,7 @@ Contact
 
 Jakub Roztocil
 
+* http://roztocil.co
 * https://github.com/jkbrzt
 * https://twitter.com/jkbrzt
 

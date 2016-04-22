@@ -11,6 +11,11 @@ from django.core.exceptions import ImproperlyConfigured
 __version__ = '1.1.0'
 
 
+VARIABLE_NAME = getattr(django_settings,
+                        'SETTINGS_EXPORT_VARIABLE_NAME',
+                        'settings')
+
+
 class SettingsExportError(ImproperlyConfigured):
     """Base error indicating misconfiguration."""
 
@@ -28,8 +33,11 @@ def settings_export(request):
     The template context processor that adds settings defined in
     `SETTINGS_EXPORT` to the context. If SETTINGS_EXPORT_VARIABLE_NAME is not
     set, the context variable will be `settings`.
+
     """
-    variable_name = getattr(django_settings, 'SETTINGS_EXPORT_VARIABLE_NAME', 'settings')
+    variable_name = getattr(django_settings,
+                            'SETTINGS_EXPORT_VARIABLE_NAME',
+                            'settings')
     return {
         variable_name: _get_exported_settings()
     }
@@ -47,9 +55,10 @@ class ExportedSettings(object):
             return self.__dict__[item]
         except KeyError:
             raise UnexportedSettingError(
-                'Cannot access "settings.%s" from a template: it is not'
-                ' exported via "settings.SETTINGS_EXPORT"'
-                % item
+                'The `{key}` setting key is not accessible'
+                ' from templates: add "{key}" to'
+                ' `settings.SETTINGS_EXPORT` to change that.'
+                .format(key=item)
             )
 
 
