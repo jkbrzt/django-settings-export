@@ -121,10 +121,15 @@ to your ``settings.py``. This is useful when some other plugin is already adding
 Exceptions
 ----------
 
+These custom exceptions can be thrown:
+
 * Listing an undefined setting key in ``SETTINGS_EXPORT`` results in an
   ``UndefinedSettingError``.
 * Accessing a unexported setting key on the ``settings`` object in a template
   results in an ``UnexportedSettingError``.
+
+All subclass from ``django_settings_export.SettingsExportError``.
+
 
 
 
