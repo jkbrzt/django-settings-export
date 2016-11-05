@@ -13,17 +13,17 @@ class TestExportedSettings(TestCase):
     def setUp(self):
         self.settings = ExportedSettings(FOO='BAR')
 
-    def test_attribute_access_ok(self):
+    def test_key_access_ok(self):
         self.assertEqual(self.settings['FOO'], 'BAR')
 
-    def test_attribute_access_unexported(self):
+    def test_key_access_unexported(self):
         with self.assertRaises(UnexportedSettingError):
             self.settings['XXX']
 
-    def test_key_access_ok(self):
+    def test_attribute_access_ok(self):
         self.assertEqual(self.settings.FOO, 'BAR')
 
-    def test_key_access_unexported(self):
+    def test_attribute_access_unexported(self):
         with self.assertRaises(UnexportedSettingError):
             self.settings.XXX
 
