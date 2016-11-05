@@ -36,9 +36,6 @@ class TestExportedSettings(TestCase):
     def test_dict_items(self):
         self.assertListEqual(list(self.settings.items()), [('FOO', 'BAR')])
 
-        # Ensure that the ExportedSettings items can be iterated like its an ordinary dict
-        self.assertEqual(list(settings.items()), [('FOO', 'BAR')])
-
 
 class TestSettingsExportContextProcessor(TestCase):
 
