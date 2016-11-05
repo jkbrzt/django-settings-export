@@ -20,13 +20,6 @@ class TestExportedSettings(TestCase):
         with self.assertRaises(UnexportedSettingError):
             self.settings['XXX']
 
-    def test_attribute_access_ok(self):
-        self.assertEqual(self.settings.FOO, 'BAR')
-
-    def test_attribute_access_unexported(self):
-        with self.assertRaises(UnexportedSettingError):
-            self.settings.XXX
-
     def test_dict_keys(self):
         self.assertListEqual(list(self.settings.keys()), ['FOO'])
 
@@ -60,3 +53,9 @@ class TestSettingsExportContextProcessor(TestCase):
         with self.assertRaises(UndefinedSettingError):
             with self.settings(SETTINGS_EXPORT=['UNDEFINED_SETTING']):
                 self.client.get('/')
+
+    def test_list(self):
+        r = self.client.get('/list')
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, 'FOO: foo')
+        self.assertContains(r, 'BAR: bar')

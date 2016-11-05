@@ -44,27 +44,22 @@ def settings_export(request):
 
 
 class ExportedSettings(dict):
-    """
-    Allows attribute access (`settings.FOO`) as well as key access
-    (`settings['FOO']`).
-
-    In case of a missing key a custom exception is thrown.
-
-    """
 
     def __getitem__(self, item):
         """Fail loudly if accessing a setting that is not exported."""
         try:
             return super(ExportedSettings, self).__getitem__(item)
         except KeyError:
+            if hasattr(self, item):
+                # Let the KeyError propagate so that Django templates
+                # can access the existing attribute (e.g. `items()`).
+                raise
             raise UnexportedSettingError(
                 'The `{key}` setting key is not accessible'
                 ' from templates: add "{key}" to'
                 ' `settings.SETTINGS_EXPORT` to change that.'
                 .format(key=item)
             )
-
-    __getattr__ = __getitem__
 
 
 def _get_exported_settings():
