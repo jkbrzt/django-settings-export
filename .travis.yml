@@ -35,7 +35,7 @@ matrix:
 script:
   - pip install $DJANGO coverage
   - pip install .
-  - coverage run --source=. --omit=setup.py ./demo/manage.py test --verbosity=2
+  - coverage run --source=. --omit=setup.py ./tests/manage.py test --verbosity=2
 after_success:
   - pip install python-coveralls
   - coveralls

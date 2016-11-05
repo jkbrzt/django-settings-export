@@ -1,8 +1,8 @@
 SECRET_KEY = 'spam'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-ROOT_URLCONF = 'demo.urls'
-INSTALLED_APPS = ['demo']
+ROOT_URLCONF = 'tests.urls'
+INSTALLED_APPS = ['tests']
 DATABASES = {'default': {'NAME': 'db.sqlite',
                          'ENGINE': 'django.db.backends.sqlite3'}}
 

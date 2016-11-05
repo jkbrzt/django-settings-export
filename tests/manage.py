@@ -8,6 +8,6 @@ if __name__ == "__main__":
         os.path.join(os.path.dirname(__file__), '..'))
     sys.path.insert(0, PROJECT_ROOT_DIR)
 
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "demo.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.settings")
     from django.core.management import execute_from_command_line
     execute_from_command_line(sys.argv)

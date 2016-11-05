@@ -133,11 +133,11 @@ All subclass from ``django_settings_export.SettingsExportError``.
 
 
 
-Demo
-----
+Demo & Tests
+------------
 
 See the source code of the bundled
-`demo app <https://github.com/jkbrzt/django-settings-export/tree/master/demo>`_.
+`demo app <https://github.com/jkbrzt/django-settings-export/tree/master/tests>`_.
 
 
 Development
@@ -145,7 +145,7 @@ Development
 
 .. code-block:: bash
 
-    $ cd demo
+    $ cd tests
 
     # Run demo
     $ python manage.py runserver
