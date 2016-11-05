@@ -16,6 +16,9 @@ class TestExportedSettings(TestCase):
             # noinspection PyStatementEffect
             settings.XXX
 
+        # Ensure that the ExportedSettings items can be iterated like its an ordinary dict
+        self.assertEqual(list(settings.items()), [('FOO', 'BAR')])
+
 
 class TestSettingsExportContextProcessor(TestCase):
 
@@ -35,6 +38,12 @@ class TestSettingsExportContextProcessor(TestCase):
     def test_unexported_setting(self):
         with self.assertRaises(UnexportedSettingError):
             self.client.get('/error')
+
+    def test_list(self):
+        r = self.client.get('/list')
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, 'FOO: foo')
+        self.assertContains(r, 'BAR: bar')
 
     def test_undefined_setting(self):
         with self.assertRaises(UndefinedSettingError):

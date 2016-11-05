@@ -61,6 +61,8 @@ class ExportedSettings(object):
                 .format(key=item)
             )
 
+    def items(self):
+        return self.__dict__.items()
 
 def _get_exported_settings():
     exported_settings = {}

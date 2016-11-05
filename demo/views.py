@@ -11,3 +11,7 @@ def render_ok_rename(request):
 
 def render_error(request):
     return render(request, 'error.html')
+
+
+def render_list(request):
+    return render(request, 'list.html')
