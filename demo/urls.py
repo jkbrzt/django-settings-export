@@ -1,13 +1,12 @@
-from django.conf.urls import patterns
+from django.conf.urls import url
 
 from . import views
 
 
-urlpatterns = patterns(
-    '',
-    ('^$', views.render_ok),
-    ('^rename$', views.render_ok_rename),
-    ('^error$', views.render_error),
-)
+urlpatterns = [
+    url('^$', views.render_ok),
+    url('^rename$', views.render_ok_rename),
+    url('^error$', views.render_error),
+]
 
 
