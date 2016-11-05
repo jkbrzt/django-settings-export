@@ -56,6 +56,12 @@ class TestSettingsExportContextProcessor(TestCase):
         with self.assertRaises(UnexportedSettingError):
             self.client.get('/error')
 
+    def test_list(self):
+        r = self.client.get('/list')
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, 'FOO: foo')
+        self.assertContains(r, 'BAR: bar')
+
     def test_undefined_setting(self):
         with self.assertRaises(UndefinedSettingError):
             with self.settings(SETTINGS_EXPORT=['UNDEFINED_SETTING']):

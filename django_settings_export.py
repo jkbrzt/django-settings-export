@@ -57,6 +57,8 @@ class ExportedSettings(dict):
         try:
             return super(ExportedSettings, self).__getitem__(item)
         except KeyError:
+            if hasattr(self, item):
+                raise
             raise UnexportedSettingError(
                 'The `{key}` setting key is not accessible'
                 ' from templates: add "{key}" to'
