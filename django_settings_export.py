@@ -43,16 +43,19 @@ def settings_export(request):
     }
 
 
-class ExportedSettings(object):
-    """A simple wrapper around the exported settings."""
+class ExportedSettings(dict):
+    """
+    Allows attribute access (`settings.FOO`) as well as key access
+    (`settings['FOO']`).
 
-    def __init__(self, settings):
-        self.__dict__ = dict(settings)
+    In case of a missing key a custom exception is thrown.
 
-    def __getattr__(self, item):
+    """
+
+    def __getitem__(self, item):
         """Fail loudly if accessing a setting that is not exported."""
         try:
-            return self.__dict__[item]
+            return super(ExportedSettings, self).__getitem__(item)
         except KeyError:
             raise UnexportedSettingError(
                 'The `{key}` setting key is not accessible'
@@ -61,9 +64,11 @@ class ExportedSettings(object):
                 .format(key=item)
             )
 
+    __getattr__ = __getitem__
+
 
 def _get_exported_settings():
-    exported_settings = {}
+    exported_settings = ExportedSettings()
     for key in getattr(django_settings, 'SETTINGS_EXPORT', []):
         try:
             value = getattr(django_settings, key)
@@ -74,5 +79,5 @@ def _get_exported_settings():
                 % key
             )
         exported_settings[key] = value
-    return ExportedSettings(exported_settings)
+    return exported_settings
 

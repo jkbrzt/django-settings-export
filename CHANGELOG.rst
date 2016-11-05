@@ -7,6 +7,14 @@ This document records all notable changes to
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 
+1.2.0-dev (Unreleased)
+----------------------
+
+* The exported ``settings`` object is an instance of ``dict`` subclass
+  to allow iteration, etc.
+
+
+
 1.1.0 (2016-03-10)
 ------------------
 

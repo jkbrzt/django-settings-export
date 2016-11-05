@@ -7,14 +7,34 @@ from django_settings_export import (
 )
 
 
+# noinspection PyStatementEffect
 class TestExportedSettings(TestCase):
 
-    def test_exported_settings_wrapper(self):
-        settings = ExportedSettings({'FOO': 'BAR'})
-        self.assertEqual(settings.FOO, 'BAR')
+    def setUp(self):
+        self.settings = ExportedSettings(FOO='BAR')
+
+    def test_attribute_access_ok(self):
+        self.assertEqual(self.settings['FOO'], 'BAR')
+
+    def test_attribute_access_unexported(self):
         with self.assertRaises(UnexportedSettingError):
-            # noinspection PyStatementEffect
-            settings.XXX
+            self.settings['XXX']
+
+    def test_key_access_ok(self):
+        self.assertEqual(self.settings.FOO, 'BAR')
+
+    def test_key_access_unexported(self):
+        with self.assertRaises(UnexportedSettingError):
+            self.settings.XXX
+
+    def test_dict_keys(self):
+        self.assertListEqual(list(self.settings.keys()), ['FOO'])
+
+    def test_dict_values(self):
+        self.assertListEqual(list(self.settings.values()), ['BAR'])
+
+    def test_dict_items(self):
+        self.assertListEqual(list(self.settings.items()), [('FOO', 'BAR')])
 
 
 class TestSettingsExportContextProcessor(TestCase):
