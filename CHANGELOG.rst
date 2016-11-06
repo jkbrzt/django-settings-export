@@ -7,7 +7,7 @@ This document records all notable changes to
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 
-1.2.0 (2016-11-06)
+1.2.1 (2016-11-06)
 ------------------
 
 * The exported ``settings`` object is now an instance of ``dict`` subclass

@@ -13,7 +13,7 @@ with codecs.open('README.rst', encoding='utf-8') as readme:
 
 setup(
     name="django-settings-export",
-    version='1.2.0',
+    version='1.2.1',
     author="Jakub Roztocil",
     author_email="jakub@roztocil.co",
     description='This Django app allows you to export'

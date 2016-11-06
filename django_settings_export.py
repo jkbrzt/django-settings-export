@@ -8,7 +8,7 @@ from django.conf import settings as django_settings
 from django.core.exceptions import ImproperlyConfigured
 
 
-__version__ = '1.2.0'
+__version__ = '1.2.1'
 
 
 VARIABLE_NAME = getattr(django_settings,
