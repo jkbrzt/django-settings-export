@@ -96,7 +96,7 @@ via ``settings.<KEY>``:
 The ``settings`` variable is an instance of ``dict`` subclass, so
 you use all the methods ``dict`` provides. For example, you can iterate over
 the keys and values using , ``settings.keys``, ``settings.values``,
-``settings.items``etc:
+``settings.items``, etc:
 
 .. code-block:: html
 
