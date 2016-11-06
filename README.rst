@@ -93,8 +93,20 @@ via ``settings.<KEY>``:
     {% endif %}
 
 
-Changing the variable name
---------------------------
+The ``settings`` variable is an instance of ``dict`` subclass, so
+you use all the methods ``dict`` provides. For example, you can iterate over
+the keys and values using , ``settings.keys``, ``settings.values``,
+``settings.items``etc:
+
+.. code-block:: html
+
+    {% for key, value in settings.items %}
+        {{ key }}: {{ value }}
+    {% endfor %}
+
+
+Changing the ``settings`` variable name
+---------------------------------------
 
 If you wish to change the name of the context variable to something besides
 ``settings``, add ``SETTINGS_EXPORT_VARIABLE_NAME = 'custom_name'``
