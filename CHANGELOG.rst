@@ -3,7 +3,7 @@ Change Log
 ==========
 
 This document records all notable changes to
-`django-settings-export <https://github.com/jkbrzt/django-settings-export>`_.
+`django-settings-export <https://github.com/jakubroztocil/django-settings-export>`_.
 This project adheres to `Semantic Versioning <http://semver.org/>`_.
 
 

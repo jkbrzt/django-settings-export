@@ -1,7 +1,7 @@
 """
 Export Django settings to templates
 
-https://github.com/jkbrzt/django-settings-export
+https://github.com/jakubroztocil/django-settings-export
 
 """
 from django.conf import settings as django_settings

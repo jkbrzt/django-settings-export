@@ -20,7 +20,7 @@ setup(
                 ' certain settings to your templates.',
     long_description=long_description,
     license='BSD',
-    url='https://github.com/jkbrzt/django-settings-export',
+    url='https://github.com/jakubroztocil/django-settings-export',
     classifiers=[
         "Intended Audience :: Developers",
         "Programming Language :: Python",

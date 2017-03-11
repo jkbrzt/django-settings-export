@@ -30,7 +30,7 @@ class TestExportedSettings(TestCase):
         raised if the key is absent from the dict (specifically one of
         TypeError, AttributeError, KeyError, ValueError, IndexError).
 
-        https://github.com/jkbrzt/django-settings-export/pull/4
+        https://github.com/jakubroztocil/django-settings-export/pull/4
 
         """
         with self.assertRaises(KeyError):
