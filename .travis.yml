@@ -2,34 +2,22 @@
 language: python
 python:
   - 2.7
-  - 3.3
-  - 3.4
   - 3.5
+  - 3.6
   - pypy
   - pypy3
 env:
-  - DJANGO=Django==1.5
-  - DJANGO=Django==1.6
-  - DJANGO=Django==1.7
+  - DJANGO=Django==1.11
+  - DJANGO=Django==2.1
   - DJANGO=Django
 
 matrix:
   exclude:
 
-    ### These older Django version don't support Python 3.5:
-    # AttributeError: module 'html.parser' has no attribute 'HTMLParseError'
-    - python: 3.5
-      env: DJANGO=Django==1.5
-    - python: 3.5
-      env: DJANGO=Django==1.6
-    - python: 3.5
-      env: DJANGO=Django==1.7
-
-    ### Too old Python for the newest Django
-    # ImportError: cannot import name find_spec
-    - python: 3.3
-      env: DJANGO=Django
-    - python: pypy3  # Should be removed once pypy catches up with Python 3.4
+    ### Django>=2.0 doesn't support Python 2
+    - python: 2.7
+      env: DJANGO=Django==2.1
+    - python: 2.7
       env: DJANGO=Django
 
 script:
