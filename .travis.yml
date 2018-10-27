@@ -19,6 +19,10 @@ matrix:
       env: DJANGO=Django==2.1
     - python: 2.7
       env: DJANGO=Django
+    - python: pypy
+      env: DJANGO=Django==2.1
+    - python: pypy
+      env: DJANGO=Django
 
 script:
   - pip install $DJANGO coverage
