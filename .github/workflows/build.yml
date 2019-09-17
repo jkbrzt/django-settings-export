@@ -1,7 +1,20 @@
 name: Build
 on: [push]
 jobs:
-  build:
+  cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - run: pip install django coverage python-coveralls .
+      - run: coverage run --source=. --omit=setup.py ./tests/manage.py test --verbosity=2
+      - run: coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
+  test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -27,10 +40,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: pip install ${{ matrix.django-version }}
-      - run: pip install coverage
       - run: pip install .
-      - run: coverage run --source=. --omit=setup.py ./tests/manage.py test --verbosity=2
-      - run: pip install python-coveralls
-      - run: coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - run: ./tests/manage.py test --verbosity=2
