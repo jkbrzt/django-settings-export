@@ -1,0 +1,36 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version:
+          - 2.7
+          - 3.5
+          - 3.6
+          - 3.7
+        django-version:
+          - Django==1.11
+          - Django==2.1
+          - Django
+        exclude:
+          # Django>=2.0 doesn't support Python 2
+          - python-version: 2.7
+            django-version: Django==2.1
+          - python-version: 2.7
+            django-version: Django
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install ${{ matrix.django-version }}
+      - run: pip install coverage
+      - run: pip install .
+      - run: coverage run --source=. --omit=setup.py ./tests/manage.py test --verbosity=2
+      - run: pip install python-coveralls
+      - run: coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
