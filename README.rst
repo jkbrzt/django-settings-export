@@ -2,7 +2,7 @@
 ##########################
 
 
-|version| |travis| |coverage|
+|version| |build| |coverage|
 
 
 Often it is needed to make some of your Django project's settings
@@ -192,8 +192,8 @@ Jakub Roztocil
 * https://twitter.com/jakubroztocil
 
 
-.. |travis| image:: https://api.travis-ci.org/jakubroztocil/django-settings-export.svg
-    :target: http://travis-ci.org/jakubroztocil/django-settings-export
+.. |build| image:: https://github.com/jakubroztocil/django-settings-export/workflows/Build/badge.svg
+    :target: https://github.com/jakubroztocil/django-settings-export/actions
     :alt: Build Status of the master branch
 
 
