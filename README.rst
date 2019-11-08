@@ -2,7 +2,7 @@
 ##########################
 
 
-|version| |build| |coverage|
+|version| |build| |coverage| |downloads|
 
 
 Often it is needed to make some of your Django project's settings
@@ -204,3 +204,7 @@ Jakub Roztocil
 .. |coverage| image:: https://img.shields.io/coveralls/jakubroztocil/django-settings-export.svg?branch=master
     :target: https://coveralls.io/r/jakubroztocil/django-settings-export?branch=master
     :alt: Coverage
+
+.. |downloads| image:: https://pepy.tech/badge/django-settings-export/month
+    :target: https://pepy.tech/project/django-settings-export/month
+    :alt: Downloads
