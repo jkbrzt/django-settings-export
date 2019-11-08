@@ -20,13 +20,16 @@ jobs:
       matrix:
         python-version: [2.7, 3.5, 3.6, 3.7]
         django-requirement:
-          - Django          
+          - Django
+          - Django==2.2          
           - Django==2.1
           - Django==1.11
         exclude:
           # Django>=2.0 doesn't support Python 2
           - python-version: 2.7
             django-requirement: Django==2.1
+          - python-version: 2.7
+            django-requirement: Django==2.2
           - python-version: 2.7
             django-requirement: Django
     steps:
