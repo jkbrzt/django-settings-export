@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-python@v1
         with:
           python-version: 3.8
-      - run: pip install django coverage python-coveralls .
+      - run: pip install django coverage==4.5.4 python-coveralls .
       - run: coverage run --source=. --omit=setup.py ./tests/manage.py test --verbosity=2
       - run: coveralls
         env:
