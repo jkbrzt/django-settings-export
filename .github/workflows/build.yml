@@ -32,6 +32,8 @@ jobs:
           - python-version: 2.7
             django-requirement: Django==2.2
           - python-version: 2.7
+            django-requirement: Django==3.1
+          - python-version: 2.7
             django-requirement: Django
     steps:
       - uses: actions/checkout@v1
