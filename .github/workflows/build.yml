@@ -21,6 +21,7 @@ jobs:
         python-version: [2.7, 3.6, 3.7, 3.8, 3.9]
         django-requirement:
           - Django  # latest
+          - Django==3.2
           - Django==3.1
           - Django==2.2          
           - Django==2.1
@@ -33,6 +34,8 @@ jobs:
             django-requirement: Django==2.2
           - python-version: 2.7
             django-requirement: Django==3.1
+          - python-version: 2.7
+            django-requirement: Django==3.2
           - python-version: 2.7
             django-requirement: Django
     steps:
