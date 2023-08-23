@@ -188,8 +188,8 @@ Contact
 Jakub Roztocil
 
 * http://roztocil.co
-* https://github.com/jakubroztocil
-* https://twitter.com/jakubroztocil
+* https://github.com/jkbrzt
+* https://twitter.com/jkbrzt
 
 
 .. |build| image:: https://github.com/jakubroztocil/django-settings-export/workflows/Build/badge.svg
