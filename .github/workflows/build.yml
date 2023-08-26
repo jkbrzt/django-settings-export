@@ -18,26 +18,13 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [2.7, 3.6, 3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, 3.10, 3.11]
         django-requirement:
           - Django  # latest
+          - Django==4.2
           - Django==3.2
-          - Django==3.1
           - Django==2.2          
-          - Django==2.1
           - Django==1.11
-        exclude:
-          # Django>=2.0 doesn't support Python 2
-          - python-version: 2.7
-            django-requirement: Django==2.1
-          - python-version: 2.7
-            django-requirement: Django==2.2
-          - python-version: 2.7
-            django-requirement: Django==3.1
-          - python-version: 2.7
-            django-requirement: Django==3.2
-          - python-version: 2.7
-            django-requirement: Django
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
