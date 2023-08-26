@@ -28,6 +28,12 @@ Accessing an undefined or un-exported setting key from a template results in an 
 
 ## Installation
 
+Install the package:
+
+```bash
+pip install django-settings-export
+```
+
 Add `'django_settings_export.settings_export'` to  template context processor list in your `settings.py`:
 
 ```python
