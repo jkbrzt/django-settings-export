@@ -148,7 +148,7 @@ $ python manage.py test
 
 ## Change Log
 
-See (`CHANGELOG`)[https://github.com/jkbrzt/django-settings-export/blob/master/CHANGELOG.rst].
+See [`CHANGELOG`](https://github.com/jkbrzt/django-settings-export/blob/master/CHANGELOG.rst).
 
 
 ## Licence
