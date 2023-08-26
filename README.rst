@@ -205,10 +205,10 @@ Jakub Roztocil
     :target: https://coveralls.io/r/jkbrzt/django-settings-export?branch=master
     :alt: Coverage
 
-.. |downloads-overall| image:: https://pepy.tech/badge/django-settings-export
+.. |downloads-overall| image:: https://static.pepy.tech/badge/django-settings-export
     :target: https://pepy.tech/project/django-settings-export
     :alt: Downloads overall
 
-.. |downloads-month| image:: https://pepy.tech/badge/django-settings-export/month
+.. |downloads-month| image:: https://static.pepy.tech/badge/django-settings-export/month
     :target: https://pepy.tech/project/django-settings-export
     :alt: Downloads per month
