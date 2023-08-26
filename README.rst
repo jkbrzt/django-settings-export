@@ -18,7 +18,7 @@ for doing just that.
   or unexported setting key from a template results in an exception.
 
 
-Tested on Python 2.7+, Django 1.5+.
+Tested on Python 3.7+, Django 1.5+.
 
 
 Installation
@@ -31,8 +31,6 @@ Installation
 
 Add ``'django_settings_export.settings_export'`` to
 template context processor list in your ``settings.py``:
-
-**Django 1.8 and newer:**
 
 .. code-block:: python
 
@@ -164,9 +162,6 @@ Development
 
     # Run tests on current Python
     $ python manage.py test
-
-    # Run tests on all Pythons
-    $ tox
 
 
 Change Log
