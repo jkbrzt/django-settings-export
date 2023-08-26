@@ -32,4 +32,4 @@ jobs:
       - run: pip install ${{ matrix.django-requirement }}
       - run: pip install .
       - run: ./tests/manage.py test --verbosity=2
-    
+
