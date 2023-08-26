@@ -18,7 +18,7 @@ for doing just that.
   or unexported setting key from a template results in an exception.
 
 
-Tested on Python 3.8+, Django 1.5+.
+Tested on Python 3.8+, Django 2.2+.
 
 
 Installation
@@ -44,15 +44,6 @@ template context processor list in your ``settings.py``:
                 ],
             },
         },
-    ]
-
-**Django older than 1.8:**
-
-.. code-block:: python
-
-    TEMPLATE_CONTEXT_PROCESSORS = [
-        # [...]
-        'django_settings_export.settings_export',
     ]
 
 
