@@ -7,7 +7,7 @@ except ImportError:
     pass
 
 
-with codecs.open('README.rst', encoding='utf-8') as readme:
+with codecs.open('README.md', encoding='utf-8') as readme:
     long_description = readme.read()
 
 
