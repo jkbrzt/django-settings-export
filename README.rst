@@ -18,7 +18,7 @@ for doing just that.
   or unexported setting key from a template results in an exception.
 
 
-Tested on Python 3.7+, Django 1.5+.
+Tested on Python 3.8+, Django 1.5+.
 
 
 Installation
